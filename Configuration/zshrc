@@ -31,4 +31,4 @@ alias nfl="neofetch --source ~/.config/neofetch/ascii-art-neofetch/communist | l
 alias nfll="neofetch --source ~/.config/neofetch/ascii-art-neofetch/communist -L | lolcat"
 
 # default editor
-export EDITOR=nvim
+export EDITOR=emacs
