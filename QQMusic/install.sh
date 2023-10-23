@@ -10,7 +10,7 @@ sudo mkdir -p /opt/Tencent/QQMusic
 
 sudo mv qqmusic-1.1.5.AppImage /opt/Tencent/QQMusic
 
-cd ~/Workspace/Arch_First_Use/install_QQMusic
+cd ~/Workspace/Arch_First_Use/QQMusic/
 
 cp qqmusic.desktop ~/.local/share/applications
 
