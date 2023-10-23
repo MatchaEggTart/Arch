@@ -1,4 +1,4 @@
-sudo pacman -S unzip p7zip
+sudo pacman -S unzip 7-zip-full
 cd ~/Downloads
 wget -O dracula.zip https://github.com/dracula/konsole/archive/master.zip
 if [ -f "~/Downloads/dracula.zip" ];then
