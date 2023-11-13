@@ -1,8 +1,8 @@
 #!/bin/bash
 
 check_install() {
-    command -v $1 > /dev/null 2>/dev/null
-    if [ $? -eq 0 ]; then
+    # pacman -Q $1 > /dev/null 2>/dev/null
+    if [[ $(pacman -Q $1) ]]; then
 	echo "$1 has been installed."
 	return 0
     else
@@ -12,6 +12,7 @@ check_install() {
 }
 
 check_install fuse
+
 if [ $? -eq 0 ]
 then
     :
