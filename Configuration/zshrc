@@ -16,7 +16,7 @@ alias mv="mv -i"
 
 # Vim
 # alias vim='gvim -v'
-alias vim="vimx"
+# alias vim="vimx"
 alias nv="nvim"
 
 # Edge
