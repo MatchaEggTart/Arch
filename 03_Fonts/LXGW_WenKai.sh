@@ -1,13 +1,13 @@
-cd ~/Downloads
+cd $HOME/Downloads
 
-git clone https://gitee.com/mirrors/lxgw-wenkai.git ~/Downloads/lxgw-wenkai
+git clone https://gitee.com/mirrors/lxgw-wenkai.git $HOME/Downloads/lxgw-wenkai
 
-mkdir -p ~/.local/share/fonts/lxgw-wenkai
+mkdir -p $HOME/.local/share/fonts/lxgw-wenkai
 
-cp -r ~/Downloads/lxgw-wenkai/fonts/TTF/* ~/.local/share/fonts/lxgw-wenkai
+cp -r $HOME/Downloads/lxgw-wenkai/fonts/TTF/* $HOME/.local/share/fonts/lxgw-wenkai
 
-cd ~/.local/share/fonts/lxgw-wenkai
+cd $HOME/.local/share/fonts/lxgw-wenkai
 
 fc-cache -f -v
 
-ls ~/.local/share/fonts/lxgw-wenkai
+ls $HOME/.local/share/fonts/lxgw-wenkai

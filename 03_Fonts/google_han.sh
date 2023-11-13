@@ -1,2 +1,2 @@
-sudo pacman -S noto-fonts-cjk
-sudo pacman -S noto-fonts-emoji
+sudo pacman -S noto-fonts-cjk noto-fonts-emoji
+
