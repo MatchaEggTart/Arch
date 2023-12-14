@@ -1,4 +1,5 @@
-sudo pacman -S autojump
+# sudo pacman -S autojump
+yay -S autojump
 # >>>  Bash users will need to add the following to ~/.bashrc:
 #     [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 
