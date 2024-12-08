@@ -1,1 +1,2 @@
-nvm install node
+nvm install --lts
+# nvm use --lts

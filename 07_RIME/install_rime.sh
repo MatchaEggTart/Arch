@@ -13,5 +13,5 @@ sudo pacman -S fcitx5 fcitx5-im fcitx5-chinese-addons fcitx5-material-color fcit
 # https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland
 # export XMODIFIERS=@im=fcitx
 
-echo -e "\# Fcitx 5" | sudo tee -a $PATH_PROFILE
+echo -e "# Fcitx 5" | sudo tee -a $PATH_PROFILE
 echo -e "export XMODIFIERS=@im=fcitx" | sudo tee -a $PATH_PROFILE
