@@ -27,14 +27,15 @@ patch:
   #'translator/preedit_format':
   #  - "xform/([nljqxyzcs])v/$1ü/"
   switches/@next:
-    name: emoji_suggestion
-    reset: 1
-    states: [" ️️\uFE0E", " ️️\uFE0F"]
-  "engine/filters/@before 0": simplifier@emoji_suggestion
+    - name: emoji_suggestion
+      reset: 1
+      states: [" ️️\uFE0E", " ️️\uFE0F"]
+  "engine/filters/@before 0":
+    - simplifier@emoji_suggestion
   emoji_suggestion:
-    opencc_config: emoji.json
-    option_name: emoji_suggestion
-    tips: all
+    - opencc_config: emoji.json
+      option_name: emoji_suggestion
+      tips: all
 
   # 模糊音定義
   "speller/algebra":
