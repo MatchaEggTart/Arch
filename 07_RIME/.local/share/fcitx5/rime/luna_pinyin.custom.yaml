@@ -12,15 +12,15 @@
 #
 
 patch:
-  switches:                   # 注意縮進
+  switches: # 注意縮進
     - name: ascii_mode
-      reset: 0                # reset 0 的作用是當從其他輸入方案切換到本方案時，
-      states: [ 中文, 西文 ]  # 重設爲指定的狀態，而不保留在前一個方案中設定的狀態。
-    - name: full_shape        # 選擇輸入方案後通常需要立即輸入中文，故重設 ascii_mode = 0；
-      states: [ 半角, 全角 ]  # 而全／半角則可沿用之前方案中的用法。
+      reset: 0 # reset 0 的作用是當從其他輸入方案切換到本方案時，
+      states: [中文, 西文] # 重設爲指定的狀態，而不保留在前一個方案中設定的狀態。
+    - name: full_shape # 選擇輸入方案後通常需要立即輸入中文，故重設 ascii_mode = 0；
+      states: [半角, 全角] # 而全／半角則可沿用之前方案中的用法。
     - name: simplification
-      reset: 1                # 增加這一行：默認啓用「繁→簡」轉換。
-      states: [ 漢字, 汉字 ]
+      reset: 1 # 增加這一行：默認啓用「繁→簡」轉換。
+      states: [漢字, 汉字]
 
   # Emoji
   # 分尖團後 v => ü 的改寫條件也要相應地擴充：
@@ -29,46 +29,45 @@ patch:
   switches/@next:
     name: emoji_suggestion
     reset: 1
-    states: [ " ️️\uFE0E", " ️️\uFE0F" ]
-  'engine/filters/@before 0':
-    simplifier@emoji_suggestion
+    states: [" ️️\uFE0E", " ️️\uFE0F"]
+  "engine/filters/@before 0": simplifier@emoji_suggestion
   emoji_suggestion:
     opencc_config: emoji.json
     option_name: emoji_suggestion
     tips: all
 
-# 模糊音定義
-  'speller/algebra':
-    - erase/^xx$/                      # 第一行保留
-   
-    # 需要哪組就刪去行首的 # 號，單雙向任選
-    - derive/^([zcs])h/$1/             # zh, ch, sh => z, c, s
-    - derive/^([zcs])([^h])/$1h$2/     # z, c, s => zh, ch, sh
+  # 模糊音定義
+  "speller/algebra":
+    - erase/^xx$/ # 第一行保留
 
-    - derive/^n/l/                     # n => l
-    - derive/^l/n/                     # l => n
+    # 需要哪組就刪去行首的 # 號，單雙向任選
+    - derive/^([zcs])h/$1/ # zh, ch, sh => z, c, s
+    - derive/^([zcs])([^h])/$1h$2/ # z, c, s => zh, ch, sh
+
+    - derive/^n/l/ # n => l
+    - derive/^l/n/ # l => n
 
     # 這兩組一般是單向的
-    - derive/^r/l/                     # r => l
+    - derive/^r/l/ # r => l
 
-    - derive/^ren/yin/                 # ren => yin, reng => ying
-    - derive/^r/y/                     # r => y
+    - derive/^ren/yin/ # ren => yin, reng => ying
+    - derive/^r/y/ # r => y
 
     # 下面 hu <=> f 這組寫法複雜一些，分情況討論
-    - derive/^hu$/fu/                  # hu => fu
-    - derive/^hong$/feng/              # hong => feng
-    - derive/^hu([in])$/fe$1/          # hui => fei, hun => fen
-    - derive/^hu([ao])/f$1/            # hua => fa, ...
+    - derive/^hu$/fu/ # hu => fu
+    - derive/^hong$/feng/ # hong => feng
+    - derive/^hu([in])$/fe$1/ # hui => fei, hun => fen
+    - derive/^hu([ao])/f$1/ # hua => fa, ...
 
-    - derive/^fu$/hu/                  # fu => hu
-    - derive/^feng$/hong/              # feng => hong
-    - derive/^fe([in])$/hu$1/          # fei => hui, fen => hun
-    - derive/^f([ao])/hu$1/            # fa => hua, ...
+    - derive/^fu$/hu/ # fu => hu
+    - derive/^feng$/hong/ # feng => hong
+    - derive/^fe([in])$/hu$1/ # fei => hui, fen => hun
+    - derive/^f([ao])/hu$1/ # fa => hua, ...
 
     # 韻母部份
-    - derive/^([bpmf])eng$/$1ong/      # meng = mong, ...
-    - derive/([ei])n$/$1ng/            # en => eng, in => ing
-    - derive/([ei])ng$/$1n/            # eng => en, ing => in
+    - derive/^([bpmf])eng$/$1ong/ # meng = mong, ...
+    - derive/([ei])n$/$1ng/ # en => eng, in => ing
+    - derive/([ei])ng$/$1n/ # eng => en, ing => in
 
     # 樣例足夠了，其他請自己總結……
 
@@ -93,25 +92,25 @@ patch:
     #- derive/^fei$/fi/                 # fei => fi
     #- derive/^wei$/vi/                 # wei => vi
     #- derive/^([nl])ei$/$1ui/          # nei => nui, lei => lui
-    #- derive/^([nlzcs])un$/$1vn/       # lun => lvn, zun => zvn, ... 
+    #- derive/^([nlzcs])un$/$1vn/       # lun => lvn, zun => zvn, ...
     #- derive/^([nlzcs])ong$/$1iong/    # long => liong, song => siong, ...
     # 這個辦法雖從拼寫上做出了區分，然而受詞典制約，候選字仍是混的。
     # 只有真正的方音輸入方案纔能做到！但「反模糊音」這個玩法快速而有效！
 
     # 模糊音定義先於簡拼定義，方可令簡拼支持以上模糊音
-    - abbrev/^([a-z]).+$/$1/           # 簡拼（首字母）
-    - abbrev/^([zcs]h).+$/$1/          # 簡拼（zh, ch, sh）
+    - abbrev/^([a-z]).+$/$1/ # 簡拼（首字母）
+    - abbrev/^([zcs]h).+$/$1/ # 簡拼（zh, ch, sh）
 
     # 以下是一組容錯拼寫，《漢語拼音》方案以前者爲正
-    - derive/^([nl])ve$/$1ue/          # nve = nue, lve = lue
-    - derive/^([jqxy])u/$1v/           # ju = jv,
-    - derive/un$/uen/                  # gun = guen,
-    - derive/ui$/uei/                  # gui = guei,
-    - derive/iu$/iou/                  # jiu = jiou,
+    - derive/^([nl])ve$/$1ue/ # nve = nue, lve = lue
+    - derive/^([jqxy])u/$1v/ # ju = jv,
+    - derive/un$/uen/ # gun = guen,
+    - derive/ui$/uei/ # gui = guei,
+    - derive/iu$/iou/ # jiu = jiou,
 
     # 自動糾正一些常見的按鍵錯誤
-    - derive/([aeiou])ng$/$1gn/        # dagn => dang 
-    - derive/([dtngkhrzcs])o(u|ng)$/$1o/  # zho => zhong|zhou
-    - derive/ong$/on/                  # zhonguo => zhong guo
-    - derive/ao$/oa/                   # hoa => hao
-    - derive/([iu])a(o|ng?)$/a$1$2/    # tain => tian
+    - derive/([aeiou])ng$/$1gn/ # dagn => dang
+    - derive/([dtngkhrzcs])o(u|ng)$/$1o/ # zho => zhong|zhou
+    - derive/ong$/on/ # zhonguo => zhong guo
+    - derive/ao$/oa/ # hoa => hao
+    - derive/([iu])a(o|ng?)$/a$1$2/ # tain => tian

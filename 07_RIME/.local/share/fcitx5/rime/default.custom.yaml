@@ -1,16 +1,16 @@
 patch:
   "menu/page_size": 7
-  
+
   key_binder:
     bindings:
       - { when: paging, accept: comma, send: Page_Up } # 候选词分页
       - { when: has_menu, accept: period, send: Page_Down } # 候选词分页
       # - { when: composing, accept: Control + x, send: clear }
       # - { when: always, accept: Control+x, toggle: ascii_mode }          # 切换中英
-      
+
   # 左Shift键输入字符直接切换为英文上屏，输入状态变为英文。
   ascii_composer/good_old_caps_lock: true
-  
+
   ascii_composer/switch_key:
     # Caps_Lock: clear       # noop是在告诉Caps_Lock键失效
     Caps_Lock: commit_code
