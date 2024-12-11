@@ -12,10 +12,35 @@
 #
 
 patch:
+  switches:                   # 注意縮進
+    - name: ascii_mode
+      reset: 0                # reset 0 的作用是當從其他輸入方案切換到本方案時，
+      states: [ 中文, 西文 ]  # 重設爲指定的狀態，而不保留在前一個方案中設定的狀態。
+    - name: full_shape        # 選擇輸入方案後通常需要立即輸入中文，故重設 ascii_mode = 0；
+      states: [ 半角, 全角 ]  # 而全／半角則可沿用之前方案中的用法。
+    - name: simplification
+      reset: 1                # 增加這一行：默認啓用「繁→簡」轉換。
+      states: [ 漢字, 汉字 ]
+
+  # Emoji
+  # 分尖團後 v => ü 的改寫條件也要相應地擴充：
+  #'translator/preedit_format':
+  #  - "xform/([nljqxyzcs])v/$1ü/"
+  switches/@next:
+    name: emoji_suggestion
+    reset: 1
+    states: [ " ️️\uFE0E", " ️️\uFE0F" ]
+  'engine/filters/@before 0':
+    simplifier@emoji_suggestion
+  emoji_suggestion:
+    opencc_config: emoji.json
+    option_name: emoji_suggestion
+    tips: all
+
+# 模糊音定義
   'speller/algebra':
     - erase/^xx$/                      # 第一行保留
-
-    # 模糊音定義
+   
     # 需要哪組就刪去行首的 # 號，單雙向任選
     - derive/^([zcs])h/$1/             # zh, ch, sh => z, c, s
     - derive/^([zcs])([^h])/$1h$2/     # z, c, s => zh, ch, sh
@@ -90,23 +115,3 @@ patch:
     - derive/ong$/on/                  # zhonguo => zhong guo
     - derive/ao$/oa/                   # hoa => hao
     - derive/([iu])a(o|ng?)$/a$1$2/    # tain => tian
-
-
-
-
-  # Emoji
-  
-  # 分尖團後 v => ü 的改寫條件也要相應地擴充：
-  #'translator/preedit_format':
-  #  - "xform/([nljqxyzcs])v/$1ü/"
-  switches/@next:
-    name: emoji_suggestion
-    reset: 1
-    states: [ " ️️\uFE0E", " ️️\uFE0F" ]
-  'engine/filters/@before 0':
-    simplifier@emoji_suggestion
-  emoji_suggestion:
-    opencc_config: emoji.json
-    option_name: emoji_suggestion
-    tips: all
-    
