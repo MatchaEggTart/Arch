@@ -15,8 +15,8 @@ patch:
     # Caps_Lock: clear       # noop是在告诉Caps_Lock键失效
     Caps_Lock: commit_code
     # Caps_Lock: inline_ascii
-    Shift_L: inline_ascii
-    Shift_R: commit_code
+    Shift_L: commit_code
+    Shift_R: inline_ascii
     # Control_L: clear      # 输入一段字符后按此键，字符被清除，同时RIME输入状态切换为英文输入。
     # Control_R: commit_text    # 按此键，文字上屏，同时RIME切换为英文输入
     Control_L: noop
