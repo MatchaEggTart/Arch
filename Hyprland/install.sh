@@ -1,2 +1,2 @@
-sudo paru -S tofi
-sudo pacman -Syy mako
+paru -S tofi
+sudo pacman -Syy mako hyprpaper waybar
