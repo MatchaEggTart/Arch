@@ -1,8 +1,0 @@
-# .bashrc
-
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
-
-# .hyprland.conf
-exec-once = fcitx5 -d
