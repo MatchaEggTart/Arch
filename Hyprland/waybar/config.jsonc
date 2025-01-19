@@ -33,6 +33,7 @@
     "hyprland/workspaces",
     "network",
     "pulseaudio",
+    "keyboard-state",
     "tray"
   ],
   "hyprland/workspaces": {
@@ -80,5 +81,16 @@
   "tray": {
     "spacing": 20,
     "icon-size": 40
+  },
+  "keyboard-state": {
+    "capslock": true,
+    "icon-size" : 60,
+    "format": {
+      "capslock": "{icon}"
+    },
+    "format-icons": {
+      "locked": "A",
+      "unlocked": " "
+    }
   }
 }
