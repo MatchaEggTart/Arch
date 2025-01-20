@@ -1,2 +1,2 @@
-paru -S pipewire wireplumber pavucontrol
-sudo reboot now
+# paru -S pipewire wireplumber pavucontrol pulseaudio
+sudo pacman -S pipewire-pulse pavucontrol

@@ -83,14 +83,15 @@
     "icon-size": 40
   },
   "keyboard-state": {
+    "interval": 0.1,
     "capslock": true,
     "icon-size" : 60,
     "format": {
-      "capslock": "{icon}"
+      "capslock": " {icon} "
     },
     "format-icons": {
-      "locked": "A",
-      "unlocked": " "
+      "locked": "🅰️",
+      "unlocked": "🔤"
     }
   }
 }
