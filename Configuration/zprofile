@@ -19,5 +19,5 @@ function proxy_status() {
 }
 
 function proxy_test() {
-    curl cip.cc3
+    curl -I http://www.google.com
 }
