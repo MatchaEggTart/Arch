@@ -2,7 +2,8 @@
 
 PATH_PROFILE="/etc/profile"
 
-sudo pacman -S fcitx5 fcitx5-im fcitx5-chinese-addons fcitx5-material-color fcitx5-rime rime-luna-pinyin rime-emoji
+# sudo pacman -S fcitx5 fcitx5-im fcitx5-chinese-addons fcitx5-material-color fcitx5-rime rime-luna-pinyin rime-emoji
+sudo pacman -S fcitx5 fcitx5-im fcitx5-chinese-addons fcitx5-rime rime-luna-pinyin rime-emoji
 
 # Fcitx5
 # vim /etc/profile
