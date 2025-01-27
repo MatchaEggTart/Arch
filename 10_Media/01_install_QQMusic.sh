@@ -27,9 +27,9 @@ cd $HOME/Downloads
 if [ -f "$HOME/Downloads/qqmusic-1.1.7.AppImage" ]; then
     cd $HOME/Downloads
 
-    sudo mkdir -p /opt/tencent/QQMusic
+    sudo mkdir -p /opt/tencent/qqmusic
 
-    sudo mv qqmusic-1.1.7.AppImage /opt/tencent/QQMusic
+    sudo mv qqmusic-1.1.7.AppImage /opt/tencent/qqmusic
 
     cd $HOME/Workspace/Arch_First_Use/10_Media/
 
@@ -41,12 +41,12 @@ if [ -f "$HOME/Downloads/qqmusic-1.1.7.AppImage" ]; then
 
     cp $HOME/Workspace/Arch_First_Use/10_Media/qqmusic.desktop $HOME/.local/share/applications
 
-    sudo cp -r icons /opt/tencent/QQMusic/
+    sudo cp -r icons /opt/tencent/qqmusic/
 
-    cd /opt/tencent/QQMusic/
+    cd /opt/tencent/qqmusic/
 
     sudo chmod +x qqmusic-1.1.7.AppImage
 
 else
-    echo "Download the QQMusic => ERROR";
+    echo "Download the qqmusic => ERROR";
 fi
