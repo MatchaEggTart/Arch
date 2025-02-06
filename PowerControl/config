@@ -4,4 +4,5 @@ ls /sys/class/power_supply/
 START_CHARGE_THRESH_BAT1=40
 STOP_CHARGE_THRESH_BAT1=80
 
-sudo systemctl restart tlp
+sudo systemctl enable tlp.service
+# sudo systemctl restart tlp
