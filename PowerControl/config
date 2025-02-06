@@ -1,0 +1,7 @@
+ls /sys/class/power_supply/
+
+/etc/tlp.conf
+START_CHARGE_THRESH_BAT1=40
+STOP_CHARGE_THRESH_BAT1=80
+
+sudo systemctl restart tlp
