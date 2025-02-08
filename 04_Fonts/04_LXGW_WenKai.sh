@@ -1,6 +1,6 @@
 cd $HOME/Downloads
 
-git clone https://gitee.com/mirrors/lxgw-wenkai.git $HOME/Downloads/lxgw-wenkai
+git clone https://github.com/lxgw/LxgwWenKai.git $HOME/Downloads/lxgw-wenkai
 
 mkdir -p $HOME/.local/share/fonts/lxgw-wenkai
 
