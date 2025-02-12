@@ -1,0 +1,2 @@
+GRUB_GFXMODE=1920x1080
+# grub-mkconfig -o /boot/grub/grub.cfg
