@@ -1,6 +1,7 @@
-# Maple Mono NF CN (Ligature hinted)
-paru -S maplemono-nf-cn
-# Maple Mono NF CN (No-Ligature hinted)
-paru -S maplemononl-nf-cn
-# Maple Mono Normal NF CN (Ligature hinted)
-paru -S maplemononormal-nf-cn
+# Maple Mono (Ligature TTF unhinted)
+paru -S maplemono-ttf
+# Maple Mono NF (Ligature unhinted)
+paru -S maplemono-nf-unhinted
+# Maple Mono NF CN (Ligature unhinted)
+paru -S maplemono-nf-cn-unhinted
+paru -S maplemono-cn

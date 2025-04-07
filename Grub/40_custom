@@ -9,6 +9,6 @@ menuentry 'Microsoft Windows 11' {
     insmod part_gpt
     insmod fat
     insmod chain
-    search --fs-uuid --no-floppy --set=root D8D4-B858 # 获取UUID，使用 sudo blkid | grep "EFI"
+    search --fs-uuid --no-floppy --set=root 8A0A-E545 # 获取UUID，使用 sudo blkid | grep "EFI"
     chainloader (${root})/EFI/Microsoft/Boot/bootmgfw.efi
 }
