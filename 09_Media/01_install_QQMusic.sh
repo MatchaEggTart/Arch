@@ -31,7 +31,7 @@ if [ -f "$HOME/Downloads/qqmusic-1.1.7.AppImage" ]; then
 
     sudo cp qqmusic-1.1.7.AppImage /opt/tencent/qqmusic
 
-    cd $HOME/Workspace/Arch/09_Media/
+    cd $HOME/Workspace/Learn_Arch/09_Media/
 
     if [ -d "$HOME/.local/share/applications" ]; then
 	:
@@ -39,7 +39,7 @@ if [ -f "$HOME/Downloads/qqmusic-1.1.7.AppImage" ]; then
 	mkdir -p $HOME/.local/share/applications
     fi
 
-    cp $HOME/Workspace/Arch/09_Media/qqmusic.desktop $HOME/.local/share/applications
+    cp $HOME/Workspace/Learn_Arch/09_Media/qqmusic.desktop $HOME/.local/share/applications
 
     sudo cp -r icons /opt/tencent/qqmusic/
 
