@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Proxy Chrome
+Name=Private Chrome
 Exec=proxy-ns google-chrome-stable --incognito
 Terminal=false
 Type=Application
